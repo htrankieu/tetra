@@ -117,7 +117,9 @@ ThermalElectricMaterialTempl<is_ad>::computeQpProperties()
     }
     _Peltier[_qp] = _seebeck[_qp] * _temperature[_qp];
 
-    if (std::abs(_resistivity[_qp]) > 1e-12)
+    using std::abs;
+    // if (std::abs(_resistivity[_qp]) > 1e-12)
+    if (abs(_resistivity[_qp]) > 1e-12)
     {
       _elec_conductivity[_qp] = 1 / _resistivity[_qp];
     }

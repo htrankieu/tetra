@@ -112,7 +112,7 @@ I = 0.7
   []
   [pleg_thermal]
     type = ADHeatConductionMaterial
-    temperature = T
+    temp = T
     thermal_conductivity_temperature_function = leg_k
     specific_heat = 100
     block = 'p_leg'
@@ -127,7 +127,7 @@ I = 0.7
   [interconnect_th]
     # Copper
     type = ADHeatConductionMaterial
-    temperature = T
+    temp = T
     thermal_conductivity = 350 # W/mK
     specific_heat = 0.385 # J/kgK
     block =  'interconnect_cold interconnect_hot'
@@ -174,7 +174,7 @@ I = 0.7
   [P_load]
     type = ParsedPostprocessor
     pp_names = 'I_out U_load'
-    expression = '-U_load*I_out'
+    function = '-U_load*I_out'
   []
 
   [T_hot]

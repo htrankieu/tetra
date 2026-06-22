@@ -25,5 +25,8 @@ TEJouleHeat::TEJouleHeat(const InputParameters & parameters)
 ADReal
 TEJouleHeat::precomputeQpResidual()
 {
-  return -std::abs(_grad_elec[_qp] * _J[_qp]);
+  using std::abs;
+
+  return -abs(_grad_elec[_qp] * _J[_qp]);
+  // return -std::abs(_grad_elec[_qp] * _J[_qp]);
 }
