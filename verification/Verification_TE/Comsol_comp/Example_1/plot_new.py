@@ -27,7 +27,7 @@ cases.append({'legend': '10 mW, constant', 'repo': 'results_10mW', 'suffix': '',
 cases.append({'legend': '10 mW, temperature dependent', 'repo': 'results_10mW', 'suffix': '_var_prop', 'comsol_file': 'T_cold_10mW_var_prop.csv', 'color': 'orange'})
 
 # Plotting setup
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(8, 6), dpi=1000) # Tran-Kieu: Added dpi 6/25/2026
 plt.rc('font', family='sans-serif', size=16)
 ax = plt.subplot(1, 1, 1)
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
@@ -46,12 +46,14 @@ for case in cases:
         print(f"Reading file: {filename}")
         data = read_csv_file(filename)
         I.append(item / 10.0)  # Current in Amps
-        T_cold.append(data['T_cold'][-1] + 273.15)  # Convert temperature to Kelvin (?C + 273.15)
+        # T_cold.append(data['T_cold'][-1] + 273.15)  # Convert temperature to Kelvin (?C + 273.15)
+        T_cold.append(data['T_cold'][-1])  # Convert temperature to Kelvin (?C + 273.15)
 
     # Read the COMSOL data
     data_comsol_T = read_csv_file(case['comsol_file'])
     comsol_I = data_comsol_T["I"]
-    comsol_T = [temp + 273.15 for temp in data_comsol_T["T"]]  # Convert COMSOL temperatures to Kelvin
+    # comsol_T = [temp + 273.15 for temp in data_comsol_T["T"]]  # Convert COMSOL temperatures to Kelvin
+    comsol_T = [temp for temp in data_comsol_T["T"]]  # Convert COMSOL temperatures to Kelvin
 
     # Plot MOOSE simulation data
     plt.plot(I, T_cold, linestyle='-', marker='', color=case['color'])
@@ -65,7 +67,7 @@ for case in cases:
 # Finalize plot
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper right')
 ax.set_xlim([0, 1.2])
-ax.set_ylim([200 + 273.15, 380 + 273.15])  # Adjust limits to Kelvin
+ax.set_ylim([200, 380])  # Adjust limits to Kelvin
 plt.tight_layout()
 plt.savefig('T_cold_K.png')  # Updated file name to reflect Kelvin
 plt.close()

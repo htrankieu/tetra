@@ -27,7 +27,7 @@ cases.append({'legend': '10 mW, constant', 'simfile': 'pleg_cuboid_10mW_csv_line
 cases.append({'legend': '10 mW, temperature dependent', 'simfile': 'pleg_cuboid_10mW_var_prop_csv_line_FINAL.csv', 'comsol_file': '_x_10mW_var_prop.csv', 'color': 'orange'})
 
 # Plot: Temperature vs Position
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(8, 6), dpi=1000) # Tran-Kieu: Added dpi 6/25/2026
 plt.rc('font', family='sans-serif', size=16)
 ax = plt.subplot(1, 1, 1)
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
@@ -59,12 +59,13 @@ for case in cases:
     leg_items.append(case['legend'] + ', COMSOL')
 
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='lower left')
+ax.set_xlim([0, 0.006]) # Added by Tran-Kieu 6/25/2026
 plt.tight_layout()
 plt.savefig('T_x_K.png')  # Updated filename to include "_K"
 plt.close()
 
 # Plot: Voltage vs Position
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(8, 6), dpi=1000) # Tran-Kieu: Added dpi 6/25/2026
 plt.rc('font', family='sans-serif', size=16)
 ax = plt.subplot(1, 1, 1)
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
@@ -93,6 +94,7 @@ for case in cases:
     leg_items.append(case['legend'] + ', COMSOL')
 
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper left')
+ax.set_xlim([0, 0.006]) # Added by Tran-Kieu 6/25/2026
 ax.set_ylim([0, 0.11])  # Set the Y-axis range for voltage
 plt.tight_layout()
 plt.savefig('V_x_K.png')  # Updated filename to include "_K"
