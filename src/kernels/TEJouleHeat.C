@@ -27,6 +27,7 @@ TEJouleHeat::precomputeQpResidual()
 {
   using std::abs;
 
+  // return -(_grad_elec[_qp] * _J[_qp]);
   return -abs(_grad_elec[_qp] * _J[_qp]);
   // return -std::abs(_grad_elec[_qp] * _J[_qp]);
 }
