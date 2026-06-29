@@ -21,8 +21,10 @@ data = read_csv_file('pleg_cuboid_tr_csv.csv')
 data_comsol_T = read_csv_file('T_tr_comsol.csv')
 
 # Convert temperatures from Celsius to Kelvin
-data['T_cold'] = [temp + 273.15 for temp in data['T_cold']]  # Convert MOOSE cold side temperature
-data_comsol_T['T'] = [temp + 273.15 for temp in data_comsol_T['T']]  # Convert COMSOL temperature
+# data['T_cold'] = [temp + 273.15 for temp in data['T_cold']]  # Convert MOOSE cold side temperature
+# data_comsol_T['T'] = [temp + 273.15 for temp in data_comsol_T['T']]  # Convert COMSOL temperature
+data['T_cold'] = [temp for temp in data['T_cold']]  # Convert MOOSE cold side temperature
+data_comsol_T['T'] = [temp for temp in data_comsol_T['T']]  # Convert COMSOL temperature
 
 # Plot setup
 plt.figure(figsize=(12, 8))
@@ -38,8 +40,11 @@ plt.plot(data_comsol_T["time"], data_comsol_T["T"], linestyle='', marker='o', co
 
 # Add legend
 ax.legend(['MOOSE', "COMSOL"], frameon=False, prop={'size': 16}, loc='lower right')
+plt.grid() # Tran-Kieu: Added 6/29/2026 
 
 # Finalize and save plot
+plt.xlim(0, 20) # Tran-Kieu: Added 6/29/2026 
+plt.ylim(215, 222) # Tran-Kieu: Added 6/29/2026 
 plt.tight_layout()
 plt.savefig('T_cold_K.png')  # Updated filename to reflect Kelvin
 plt.close()
