@@ -250,7 +250,6 @@ c14 = 1.325e10
     block =  'interconnect_cold interconnect_hot'
   []
   [alumina_th]
-    # Copper
     type = ADHeatConductionMaterial
     temperature = T
     thermal_conductivity = 29 # W/mK
