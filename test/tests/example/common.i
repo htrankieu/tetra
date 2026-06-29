@@ -32,7 +32,7 @@ I = 0.7
   [EntireMesh]
     type = TransformGenerator
     input = extrude
-    transform = SCALE
+    transform = SCALE # changes the scaling of the mesh from meters to millimeters
     vector_value = '0.001 0.001 0.001'
   []
     [align_comsol]
@@ -85,7 +85,7 @@ I = 0.7
     variable = T
     boundary = 'bottom'
     T_infinity = ${fparse 0 + 273.15}
-    heat_transfer_coefficient = 1e7
+    heat_transfer_coefficient = 1e7 # default value 1e7
   []
   [elec_right]
     type = ADDirichletBC
@@ -110,14 +110,14 @@ I = 0.7
     temp = T
     elec = elec
   []
-  [pleg_thermal]
+  [pleg_thermal] # thermal properties of BiTe
     type = ADHeatConductionMaterial
     temperature = T
     thermal_conductivity_temperature_function = leg_k
     specific_heat = 100
     block = 'p_leg'
   []
- [pleg]
+ [pleg] # electrical properties of BiTe
     type = ADThermalElectricMaterial
     temp = T
     seebeck_temperature_function = pleg_seebeck
