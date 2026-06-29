@@ -1,0 +1,156 @@
+[Tests]
+  # parallel_scheduling = True
+
+  [00]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0 Outputs/file_base=results/I00'
+  []
+
+  [01]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.01 Outputs/file_base=results/I01'
+  []
+
+  [02]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.02 Outputs/file_base=results/I02'
+  []
+
+  [03]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.03 Outputs/file_base=results/I03'
+  []
+
+  [04]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.04 Outputs/file_base=results/I04'
+  []
+
+  [05]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.05 Outputs/file_base=results/I05'
+  []
+
+  [06]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.06 Outputs/file_base=results/I06'
+  []
+
+  [07]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.07 Outputs/file_base=results/I07'
+  []
+
+  [08]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.08 Outputs/file_base=results/I08'
+  []
+
+  [09]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.09 Outputs/file_base=results/I09'
+  []
+
+  [10]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.1 Outputs/file_base=results/I10'
+  []
+
+  [11]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.11 Outputs/file_base=results/I11'
+  []
+
+  [12]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.12 Outputs/file_base=results/I12'
+  []
+
+  [13]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.13 Outputs/file_base=results/I13'
+  []
+
+  [14]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.14 Outputs/file_base=results/I14'
+  []
+
+  [15]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.15 Outputs/file_base=results/I15'
+  []
+
+  [16]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.16 Outputs/file_base=results/I16'
+  []
+
+  [17]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.17 Outputs/file_base=results/I17'
+  []
+
+  [18]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.18 Outputs/file_base=results/I18'
+  []
+
+  [19]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.19 Outputs/file_base=results/I19'
+  []
+
+  [20]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.20 Outputs/file_base=results/I20'
+  []
+  [21]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.21 Outputs/file_base=results/I21'
+  []
+  [22]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.22 Outputs/file_base=results/I22'
+  []
+  [23]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.23 Outputs/file_base=results/I23'
+  []
+  [24]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.24 Outputs/file_base=results/I24'
+  []
+  [25]
+    type = RunApp
+    input = 'pleg_cuboid.i'
+    cli_args= 'I=0.25 Outputs/file_base=results/I25'
+  []
+
+
+[]
