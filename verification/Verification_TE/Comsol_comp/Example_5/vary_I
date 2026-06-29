@@ -1,0 +1,130 @@
+[Tests]
+  # parallel_scheduling = True
+
+  [00]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0 Outputs/file_base=results/I00'
+  []
+
+  [01]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.1 Outputs/file_base=results/I01'
+  []
+
+  [02]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.2 Outputs/file_base=results/I02'
+  []
+
+  [03]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.3 Outputs/file_base=results/I03'
+  []
+
+  [04]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.4 Outputs/file_base=results/I04'
+  []
+
+  [05]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.5 Outputs/file_base=results/I05'
+  []
+
+  [06]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.6 Outputs/file_base=results/I06'
+  []
+
+  [07]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.7 Outputs/file_base=results/I07'
+  []
+
+  [08]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.8 Outputs/file_base=results/I08'
+  []
+
+  [09]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=0.9 Outputs/file_base=results/I09'
+  []
+
+  [10]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.0 Outputs/file_base=results/I10'
+  []
+
+  [11]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.1 Outputs/file_base=results/I11'
+  []
+
+  [12]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.2 Outputs/file_base=results/I12'
+  []
+
+  [13]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.3 Outputs/file_base=results/I13'
+  []
+
+  [14]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.4 Outputs/file_base=results/I14'
+  []
+
+  [15]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.5 Outputs/file_base=results/I15'
+  []
+
+  [16]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.6 Outputs/file_base=results/I16'
+  []
+
+  [17]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.7 Outputs/file_base=results/I17'
+  []
+
+  [18]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.8 Outputs/file_base=results/I18'
+  []
+
+  [19]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=1.9 Outputs/file_base=results/I19'
+  []
+
+  [20]
+    type = RunApp
+    input = 'module_cuboid.i'
+    cli_args= 'I=2.0 Outputs/file_base=results/I20'
+  []
+
+[]
