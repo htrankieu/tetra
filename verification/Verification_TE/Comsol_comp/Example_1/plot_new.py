@@ -46,14 +46,12 @@ for case in cases:
         print(f"Reading file: {filename}")
         data = read_csv_file(filename)
         I.append(item / 10.0)  # Current in Amps
-        # T_cold.append(data['T_cold'][-1] + 273.15)  # Convert temperature to Kelvin (?C + 273.15)
-        T_cold.append(data['T_cold'][-1])  # Convert temperature to Kelvin (?C + 273.15)
+        T_cold.append(data['T_cold'][-1])  # Temperature in Kelvin
 
     # Read the COMSOL data
     data_comsol_T = read_csv_file(case['comsol_file'])
     comsol_I = data_comsol_T["I"]
-    # comsol_T = [temp + 273.15 for temp in data_comsol_T["T"]]  # Convert COMSOL temperatures to Kelvin
-    comsol_T = [temp for temp in data_comsol_T["T"]]  # Convert COMSOL temperatures to Kelvin
+    comsol_T = [temp for temp in data_comsol_T["T"]]  # COMSOL temperatures in Kelvin
 
     # Plot MOOSE simulation data
     plt.plot(I, T_cold, linestyle='-', marker='', color=case['color'])

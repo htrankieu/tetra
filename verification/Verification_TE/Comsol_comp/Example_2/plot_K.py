@@ -21,10 +21,8 @@ data = read_csv_file('pleg_cuboid_tr_csv.csv')
 data_comsol_T = read_csv_file('T_tr_comsol.csv')
 
 # Convert temperatures from Celsius to Kelvin
-# data['T_cold'] = [temp + 273.15 for temp in data['T_cold']]  # Convert MOOSE cold side temperature
-# data_comsol_T['T'] = [temp + 273.15 for temp in data_comsol_T['T']]  # Convert COMSOL temperature
-data['T_cold'] = [temp for temp in data['T_cold']]  # Convert MOOSE cold side temperature
-data_comsol_T['T'] = [temp for temp in data_comsol_T['T']]  # Convert COMSOL temperature
+data['T_cold'] = [temp for temp in data['T_cold']]  # MOOSE temperature in Kelvin
+data_comsol_T['T'] = [temp for temp in data_comsol_T['T']]  # COMSOL temperature in Kelvin
 
 # Plot setup
 plt.figure(figsize=(12, 8))

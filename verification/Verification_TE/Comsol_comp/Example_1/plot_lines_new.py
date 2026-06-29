@@ -40,14 +40,12 @@ for case in cases:
     data = read_csv_file(case['simfile'])
     # Convert temperature to Kelvin
     sim_x = np.array(data['x']) - 0.0001  # Adjust x-position as in the original script
-    # sim_T = np.array(data['T']) + 273.15  # Convert temperature to Kelvin
-    sim_T = np.array(data['T'])  # Convert temperature to Kelvin
+    sim_T = np.array(data['T'])  # Temperature in Kelvin
 
     # Read COMSOL data
     data_comsol_T = read_csv_file('T' + case['comsol_file'])
     comsol_x = np.array(data_comsol_T["x"]) * 1000  # Convert COMSOL x to mm as in the original script
-    # comsol_T = np.array(data_comsol_T["T"]) + 273.15  # Convert temperature to Kelvin
-    comsol_T = np.array(data_comsol_T["T"])  # Convert temperature to Kelvin
+    comsol_T = np.array(data_comsol_T["T"])  # Temperature in Kelvin
 
     # Plot MOOSE simulation data
     plt.plot(sim_x, sim_T, linestyle='-', marker='', color=case['color'])
