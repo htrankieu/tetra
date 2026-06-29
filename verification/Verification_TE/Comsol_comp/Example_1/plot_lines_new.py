@@ -95,7 +95,6 @@ for case in cases:
 
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper left')
 ax.set_xlim([0, 0.006]) # Added by Tran-Kieu 6/25/2026
-ax.set_ylim([0, 0.11])  # Set the Y-axis range for voltage
 plt.tight_layout()
 plt.savefig('V_x_K.png')  # Updated filename to include "_K"
 plt.close()

@@ -67,7 +67,6 @@ for case in cases:
 # Finalize plot
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper right')
 ax.set_xlim([0, 1.2])
-ax.set_ylim([200, 380])  # Adjust limits to Kelvin
 plt.tight_layout()
 plt.savefig('T_cold_K.png')  # Updated file name to reflect Kelvin
 plt.close()
