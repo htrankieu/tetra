@@ -66,5 +66,5 @@ for case in cases:
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper right')
 ax.set_xlim([0, 1.2])
 plt.tight_layout()
-plt.savefig('T_cold_K.png')  # Updated file name to reflect Kelvin
+plt.savefig('figures/T_cold_K.png')  # Updated file name to reflect Kelvin
 plt.close()
