@@ -82,7 +82,7 @@ I = 0.7
 []
 
 [BCs]
-  [cold_temp]
+  [hot_temp]
     type = ADConvectiveHeatFluxBC
     variable = T
     boundary = 'bottom'
@@ -241,6 +241,6 @@ I = 0.7
     end_point = '0.0059 -0.0005 -0.0005'
     num_points = 120
     variable = 'T elec'
-    execute_on = FINAL
+    execute_on = 'FINAL'
   []
 []
