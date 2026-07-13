@@ -25,7 +25,7 @@ data['T_cold'] = [temp for temp in data['T_cold']]  # MOOSE temperature in Kelvi
 data_comsol_T['T'] = [temp for temp in data_comsol_T['T']]  # COMSOL temperature in Kelvin
 
 # Plot setup
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(12, 8), dpi=1000)
 plt.rc('font', family='sans-serif', size=16)
 ax = plt.subplot(1, 1, 1)
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
@@ -38,7 +38,7 @@ plt.plot(data_comsol_T["time"], data_comsol_T["T"], linestyle='', marker='o', co
 
 # Add legend
 ax.legend(['MOOSE', "COMSOL"], frameon=False, prop={'size': 16}, loc='lower right')
-plt.grid() # Tran-Kieu: Added 6/29/2026 
+# plt.grid() # Tran-Kieu: Added 6/29/2026 
 
 # Finalize and save plot
 plt.xlim(0, 20) # Tran-Kieu: Added 6/29/2026 

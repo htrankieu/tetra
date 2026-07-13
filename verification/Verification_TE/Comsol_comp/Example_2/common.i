@@ -200,16 +200,19 @@
     type = SideAverageValue
     boundary = bottom
     variable = elec
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [Vmin]
     type = SideAverageValue
     boundary = top
     variable = elec
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [U_load]
     type = ParsedPostprocessor
     pp_names = 'Vmax Vmin'
     expression = 'Vmax - Vmin'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
 
   [heat_in]
@@ -217,6 +220,7 @@
     variable = T
     diffusivity = thermal_conductivity
     boundary = 'top'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
 
   [I_out]
@@ -224,27 +228,32 @@
     property = current_density
     component = 0
     boundary = 'bottom'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [P_load]
     type = ParsedPostprocessor
     pp_names = 'I_out U_load'
     expression = '-U_load*I_out'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
 
   [T_hot]
     type = SideAverageValue
     boundary = bottom
     variable = T
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [T_cold]
     type = SideAverageValue
     boundary = top
     variable = T
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [delta_T]
     type = ParsedPostprocessor
     pp_names = 'T_cold T_hot'
     expression = 'T_hot - T_cold'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
 []
 
