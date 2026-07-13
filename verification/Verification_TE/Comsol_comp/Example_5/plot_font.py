@@ -51,7 +51,7 @@ plt.plot(I, T_cold, linestyle='-', marker='', color='cornflowerblue', label='MOO
 plt.plot(data_comsol_T["I"], data_comsol_T["T"], linestyle='--', marker='', color='orange', label='COMSOL')
 ax.legend(frameon=False, prop={'size': 16}, loc='upper right')  # Increased legend font size
 plt.tight_layout()
-plt.savefig('T_cold_K.png')  # Updated filename to reflect Kelvin
+plt.savefig('figures/T_cold_K.png')  # Updated filename to reflect Kelvin
 plt.close()
 
 # Plot: Displacement vs Current
@@ -65,5 +65,5 @@ plt.plot(I, disp, linestyle='-', marker='', color='cornflowerblue', label='MOOSE
 plt.plot(data_comsol_disp["I"], data_comsol_disp["disp"], linestyle='--', marker='', color='orange', label='COMSOL')
 ax.legend(frameon=False, prop={'size': 16}, loc='upper left')  # Increased legend font size
 plt.tight_layout()
-plt.savefig('disp_font.png')  # Displacement plot filename remains unchanged
+plt.savefig('figures/disp_font.png')  # Displacement plot filename remains unchanged
 plt.close()

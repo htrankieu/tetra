@@ -7,6 +7,10 @@ c44 = 2.738e10
 c13 = 2.704e10
 c14 = 1.325e10
 
+# anisotropic temperature expansion coefficients (units: 1/K)
+# ax = 21.3e-6
+# ay = 14.4e-6
+# az = 14.4e-6
 
 [GlobalParams]
   # thermal expansion
@@ -137,7 +141,7 @@ c14 = 1.325e10
   #   T_infinity = ${fparse 250+273.15}
   #   heat_transfer_coefficient = 1e4 # ${fparse 1/(25*20e-6)}
   # []
-  [cold_temp]
+  [hot_temp]
     type = ADConvectiveHeatFluxBC
     variable = T
     boundary = 'bottom'
@@ -157,7 +161,7 @@ c14 = 1.325e10
     boundary = p_side
     value = ${fparse I/(0.0002*0.0015)}
   []
-  [disp_x]
+  [disp_x] 
     type = ADDirichletBC
     variable = disp_y
     boundary = 'pin'
@@ -188,8 +192,15 @@ c14 = 1.325e10
     temperature = T # Incorperate temp
     # use
     # generate_output = 'vonmises_stress stress_xx stress_xy stress_yy'
-
+    # block = 'interconnect_cold interconnect_hot 5' # Activate for anisotropic thermal expansion for legs
   []
+  # [./all] # anisotropic thermal expansion coefficient for legs
+  #   strain = SMALL
+  #   add_variables = true
+  #   temperature = T
+  #   eigenstrain_names = thermal_eigenstrain 
+  #   block = 'p_leg n_leg' 
+  # [../]
 []
 # [Physics/SolidMechanics/QuasiStatic]
 #   [all]
@@ -220,7 +231,6 @@ c14 = 1.325e10
     specific_heat = 100
     block = 'p_leg'
   []
-
   [pleg]
     # Setup a material that will provide varying Seebeck coefficients with changing temperature
     type = ADThermalElectricMaterial
@@ -264,9 +274,6 @@ c14 = 1.325e10
     resistivity_temperature_function = ${fparse 1/5.9e8}
     block =  'interconnect_cold interconnect_hot'
   []
-
-
-
   [stress]
     # type = ComputeFiniteStrainElasticStress
     type = ComputeLinearElasticStress
@@ -278,7 +285,6 @@ c14 = 1.325e10
     poissons_ratio = 0.22 #
     block = 5 #
   []
-
    [thermal_expansion_alumina]
     type = ComputeThermalExpansionEigenstrain
     stress_free_temperature = 273.15
@@ -287,7 +293,6 @@ c14 = 1.325e10
     eigenstrain_name = eigenstrain
     block = 5 #
   []
-
   [elasticity_tensor_copper]
     # Standard Isotropic Elasticty Tensor
     type = ComputeIsotropicElasticityTensor
@@ -295,8 +300,7 @@ c14 = 1.325e10
     poissons_ratio = 0.35
     block = 'interconnect_cold interconnect_hot' #
   []
-
-   [thermal_expansion_copper]
+  [thermal_expansion_copper]
     type = ComputeThermalExpansionEigenstrain
     stress_free_temperature = 273.15
     thermal_expansion_coeff = 17e-6
@@ -319,15 +323,21 @@ c14 = 1.325e10
     block = 'p_leg n_leg' #
   []
 
-   [thermal_expansion_leg]
+  [thermal_expansion_leg]
     type = ComputeThermalExpansionEigenstrain
     stress_free_temperature = 273.15
     thermal_expansion_coeff = 21.3e-6
     temperature = T
     eigenstrain_name = eigenstrain
-    block = 'p_leg n_leg' #
+    block = 'p_leg n_leg' 
   []
-
+  # [./aniso_thermal_eigenstrain]
+  #   type = ComputeEigenstrain
+  #   eigen_base = '21.3e-6 0 0 0 0 0' # '21.3e-6 14.4e-6 14.4e-6 0 0 0'
+  #   eigenstrain_name = eigenstrain # change to eigenstrain
+  #   block = 'p_leg n_leg' 
+  #   temperature = T
+  # [../]
 []
 
 [Postprocessors]
@@ -335,16 +345,19 @@ c14 = 1.325e10
     type = SideAverageValue
     boundary = p_side
     variable = elec
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [Vmin]
     type = SideAverageValue
     boundary = n_side
     variable = elec
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [U_load]
     type = ParsedPostprocessor
     pp_names = 'Vmax Vmin'
     expression = 'Vmax - Vmin'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
 
   [heat_in]
@@ -352,17 +365,20 @@ c14 = 1.325e10
     variable = T
     diffusivity = thermal_conductivity
     boundary = 'top'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [I_out]
     type = ADSideDiffusiveFluxIntegral
     variable = elec
     diffusivity = elec_conductivity
     boundary = 'n_side'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [P_load]
     type = ParsedPostprocessor
     pp_names = 'I_out U_load'
     expression = '-U_load*I_out'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   # [Vonmises_stress]
   #   type = ElementExtremeValue
@@ -388,21 +404,25 @@ c14 = 1.325e10
     type = SideAverageValue
     boundary = top
     variable = disp_x
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [T_hot]
     type = SideAverageValue
     boundary = bottom
     variable = T
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [T_cold]
     type = SideAverageValue
     boundary = top
     variable = T
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [delta_T]
     type = ParsedPostprocessor
     pp_names = 'T_cold T_hot'
     expression = 'T_hot - T_cold'
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
 []
 
