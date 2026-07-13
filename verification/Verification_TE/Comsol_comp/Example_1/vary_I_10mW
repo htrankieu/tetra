@@ -79,54 +79,6 @@
     cli_args= 'I=1.2 Outputs/file_base=results_10mW/I12'
   []
 
-  [13]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.3 Outputs/file_base=results_10mW/I13'
-  []
-
-  [14]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.4 Outputs/file_base=results_10mW/I14'
-  []
-
-  [15]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.5 Outputs/file_base=results_10mW/I15'
-  []
-
-  [16]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.6 Outputs/file_base=results_10mW/I16'
-  []
-
-  [17]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.7 Outputs/file_base=results_10mW/I17'
-  []
-
-  [18]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.8 Outputs/file_base=results_10mW/I18'
-  []
-
-  [19]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=1.9 Outputs/file_base=results_10mW/I19'
-  []
-
-  [20]
-    type = RunApp
-    input = 'pleg_cuboid_10mW.i'
-    cli_args= 'I=2.0 Outputs/file_base=results_10mW/I20'
-  []
-
   [00_var_prop]
     type = RunApp
     input = 'pleg_cuboid_10mW_var_prop.i'
@@ -203,54 +155,6 @@
     type = RunApp
     input = 'pleg_cuboid_10mW_var_prop.i'
     cli_args= 'I=1.2 Outputs/file_base=results_10mW/I12_var_prop'
-  []
-
-  [13_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.3 Outputs/file_base=results_10mW/I13_var_prop'
-  []
-
-  [14_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.4 Outputs/file_base=results_10mW/I14_var_prop'
-  []
-
-  [15_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.5 Outputs/file_base=results_10mW/I15_var_prop'
-  []
-
-  [16_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.6 Outputs/file_base=results_10mW/I16_var_prop'
-  []
-
-  [17_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.7 Outputs/file_base=results_10mW/I17_var_prop'
-  []
-
-  [18_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.8 Outputs/file_base=results_10mW/I18_var_prop'
-  []
-
-  [19_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=1.9 Outputs/file_base=results_10mW/I19_var_prop'
-  []
-
-  [20_var_prop]
-    type = RunApp
-    input = 'pleg_cuboid_10mW_var_prop.i'
-    cli_args= 'I=2.0 Outputs/file_base=results_10mW/I20_var_prop'
   []
 
 []

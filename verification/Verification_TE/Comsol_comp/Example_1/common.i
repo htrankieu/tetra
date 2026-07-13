@@ -13,15 +13,15 @@ I = 0.7
                              2
                              3'
   []
+
   [rename_blocks]
     type                  = RenameBlockGenerator
     input                 = 'cmg'
     old_block             = '1 2 3'
-    new_block             = 'interconnect_cold p_leg interconnect_hot'
+    new_block             = 'interconnect_hot p_leg interconnect_cold'
   []
 
-
-    [extrude]
+  [extrude]
     type = AdvancedExtruderGenerator
     input = rename_blocks
     heights = '1'
@@ -41,7 +41,7 @@ I = 0.7
     transform = ROTATE
     vector_value = '-90 90 0'
   []
-  # uniform_refine = 2
+
 []
 
 
@@ -55,7 +55,6 @@ I = 0.7
 []
 
 [Kernels]
-  # Heat DT
   [HeatDiff]
     type = ADHeatConduction
     variable = T
@@ -183,11 +182,13 @@ I = 0.7
     type = SideAverageValue
     boundary = bottom
     variable = T
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [T_cold]
     type = SideAverageValue
     boundary = top
     variable = T
+    execute_on = 'INITIAL NONLINEAR TIMESTEP_END'
   []
   [delta_T]
     type = ParsedPostprocessor
@@ -227,7 +228,7 @@ I = 0.7
   []
   [csv]
     type = CSV
-    create_final_symlink = true
+    # create_final_symlink = true
     execute_on = 'FINAL'
   []
 

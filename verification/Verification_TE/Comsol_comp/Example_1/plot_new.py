@@ -17,7 +17,7 @@ def read_csv_file(filepath):
     return data
 
 # Intensity range
-Intensities = range(0, 21)
+Intensities = range(0, 13)
 
 # Case definitions
 cases = []
@@ -65,6 +65,7 @@ for case in cases:
 # Finalize plot
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper right')
 ax.set_xlim([0, 1.2])
+ax.set_ylim([210, 370])
 plt.tight_layout()
 plt.savefig('figures/T_cold_K.png')  # Updated file name to reflect Kelvin
 plt.close()

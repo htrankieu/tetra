@@ -17,14 +17,14 @@ def read_csv_file(filepath):
     return data
 
 # Intensity range
-Intensities = range(0, 21)
+Intensities = range(0, 13)
 
 # Case definitions
 cases = []
-cases.append({'legend': '0 W, constant', 'simfile': 'pleg_cuboid_csv_line_FINAL.csv', 'comsol_file': '_x.csv', 'color': 'cornflowerblue'})
-cases.append({'legend': '0 W, temperature dependent', 'simfile': 'pleg_cuboid_var_prop_csv_line_FINAL.csv', 'comsol_file': '_x_var_prop.csv', 'color': 'indianred'})
-cases.append({'legend': '10 mW, constant', 'simfile': 'pleg_cuboid_10mW_csv_line_FINAL.csv', 'comsol_file': '_x_10mW.csv', 'color': 'green'})
-cases.append({'legend': '10 mW, temperature dependent', 'simfile': 'pleg_cuboid_10mW_var_prop_csv_line_FINAL.csv', 'comsol_file': '_x_10mW_var_prop.csv', 'color': 'orange'})
+cases.append({'legend': '0 W, constant', 'simfile': 'pleg_cuboid_csv_line_0002.csv', 'comsol_file': '_x.csv', 'color': 'cornflowerblue'})
+cases.append({'legend': '0 W, temperature dependent', 'simfile': 'pleg_cuboid_var_prop_csv_line_0002.csv', 'comsol_file': '_x_var_prop.csv', 'color': 'indianred'})
+cases.append({'legend': '10 mW, constant', 'simfile': 'pleg_cuboid_10mW_csv_line_0002.csv', 'comsol_file': '_x_10mW.csv', 'color': 'green'})
+cases.append({'legend': '10 mW, temperature dependent', 'simfile': 'pleg_cuboid_10mW_var_prop_csv_line_0002.csv', 'comsol_file': '_x_10mW_var_prop.csv', 'color': 'orange'})
 
 # Plot: Temperature vs Position
 plt.figure(figsize=(8, 6), dpi=1000) # Tran-Kieu: Added dpi 6/25/2026
@@ -58,8 +58,9 @@ for case in cases:
 
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='lower left')
 ax.set_xlim([0, 0.006]) # Added by Tran-Kieu 6/25/2026
+ax.set_ylim([210, 290])
 plt.tight_layout()
-plt.savefig('T_x_K.png')  # Updated filename to include "_K"
+plt.savefig('figures/T_x_K.png')  # Updated filename to include "_K"
 plt.close()
 
 # Plot: Voltage vs Position
@@ -93,6 +94,7 @@ for case in cases:
 
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='upper left')
 ax.set_xlim([0, 0.006]) # Added by Tran-Kieu 6/25/2026
+ax.set_ylim([0, 0.15])
 plt.tight_layout()
-plt.savefig('V_x_K.png')  # Updated filename to include "_K"
+plt.savefig('figures/V_x_K.png')  # Updated filename to include "_K"
 plt.close()
