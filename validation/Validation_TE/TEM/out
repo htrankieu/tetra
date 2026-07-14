@@ -1,0 +1,6 @@
+total 15248
+-rw-r--r-- 1 charlise usu    11482 May 19 11:48 module_cuboid_pattern_mesh.i
+-rw-r--r-- 1 charlise usu 30333336 May 19 12:06 module_cuboid_pattern_mesh_in.e
+-rw-r--r-- 1 charlise usu     9034 May 19 11:48 module_cuboid_pattern_sq.i
+-rw-rw-r-- 1 charlise usu        0 May 19 13:39 out
+-rw-rw-r-- 1 charlise usu     1693 May 19 13:39 run_power.py
