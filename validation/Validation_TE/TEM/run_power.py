@@ -17,8 +17,12 @@ for (i, current) in enumerate(I):
    i_c = int(current * 10)
    base = 'pattern_' + str(i_c).zfill(2)
   #  command_list = ['ls', '-l', '> out']
-   command_list = ['mpirun', '-n', '112','moose-dev-exec', '/projects/USU/Thermoelectric-Working/tetra_bitterroot/tetra/tetra-opt', '-i', 'module_cuboid_pattern_sq.i',
+   command_list = ['mpirun', '-n', '112', '/projects/USU/Thermoelectric-Hailey/tetra-test/tetra/tetra-opt', '-i', 'module_cuboid_pattern_sq.i',
                         f'I={current}', f'Outputs/file_base={base}', '-w', '--use-split', '--split-file', 'pattern_mesh.cpa.gz']
+  
+  #  command_list = ['mpirun', '-n', '112','moose-dev-exec', '/projects/USU/Thermoelectric-Hailey/tetra-test/tetra/tetra-opt', '-i', 'module_cuboid_pattern_sq.i',
+  #                       f'I={current}', f'Outputs/file_base={base}', '-w', '--use-split', '--split-file', 'pattern_mesh.cpa.gz']
+  
   #  print(command_list)
   #  os.system('module load use.moose moose-dev-openmpi/2025.04.22')
   #  os.system('module list')
