@@ -10,6 +10,13 @@ NOTE: Within in each folder listed below are more README.md files that explain w
 This folder contains files for conducting a mesh convergence study to compare the MOOSE model to the analytical solution outlined in the paper by Guillen & Charlot (see Equations 25 & 26).
 
 
+**validation**
+This folder contains the validation studies found in Section 4 of the paper by Guillen & Charlot. 
+
+    Section     Folder      Contents
+    4.1         TEM         Mesh convergence study
+
+
 **verification**
 This folder contains the Comsol/Jaegle verification studies where the input files were edited. You will find the anisotropic thermal expansion coefficient implementation attempts here. The folders named 0_new-runs within each Example_# folder contain the results for each version of TEJouleHeat.C with and without the negative temperature check from ThermalElectricMaterial.C.
 
