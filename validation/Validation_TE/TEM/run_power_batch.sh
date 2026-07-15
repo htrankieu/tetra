@@ -29,7 +29,7 @@ module load use.moose moose-dev-openmpi/2026.06.16
 
 cd /projects/USU/Thermoelectric-Hailey/tetra-test/tetra/validation/Validation_TE/TEM
 
-mpiexec -n 112 moose-dev-exec ../../../tetra-opt -i module_cuboid_pattern_sq.i I=${i} Outputs/file_base=current_${i} -w --use-split --split-file pattern.cpa.gz
+mpiexec -n 112 moose-dev-exec ../../../tetra-opt -i module_cuboid_pattern_sq.i I=${i} Outputs/file_base=current_${i} -w --use-split --split-file pattern_mesh.cpa.gz
 
 echo "Finished job for current_${i} at \$(date)"
 EOF
