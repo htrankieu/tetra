@@ -79,7 +79,7 @@ plate_thickness = 0.8
 
   []
   [stitch_right]
-    # type = StitchedMeshGenerator
+    # type = StitchMeshGenerator
     type = CombinerGenerator
     inputs = 'extrude right_connect'
     avoid_merging_boundaries = true
@@ -104,7 +104,7 @@ plate_thickness = 0.8
   []
 
   [stitch_left]
-    # type = StitchedMeshGenerator
+    # type = StitchMeshGenerator
     type = CombinerGenerator
     inputs = 'stitch_right left_connect'
     avoid_merging_boundaries = true
@@ -130,7 +130,7 @@ plate_thickness = 0.8
     input = turn
   []
   [Combine]
-    type = StitchedMeshGenerator
+    type = StitchMeshGenerator
     # type = CombinerGenerator
     inputs = 'mirror realign'
     # avoid_merging_boundaries = true
@@ -245,7 +245,7 @@ plate_thickness = 0.8
   []
   [combine_with_side]
     # type = CombinerGenerator
-    type = StitchedMeshGenerator
+    type = StitchMeshGenerator
     inputs = 'generate_side_connect generate_side_connect_2'
     stitch_boundaries_pairs = 'mod_side_connect mod_side_connect_side'
   []
@@ -315,7 +315,7 @@ plate_thickness = 0.8
   []
   [combine_with_side_2]
     # type = CombinerGenerator
-    type = StitchedMeshGenerator
+    type = StitchMeshGenerator
     inputs = 'generate_side_connect_3 generate_side_connect_22'
     stitch_boundaries_pairs = 'mod_side_connect mod_side_connect_side_2'
   []
@@ -345,7 +345,7 @@ plate_thickness = 0.8
    []
     [combine_with_top_plate]
     # type = CombinerGenerator
-    type = StitchedMeshGenerator
+    type = StitchMeshGenerator
     inputs = 'combine_with_side_2 rename_top_plate'
     stitch_boundaries_pairs = 'top top_plate_back'
   []
@@ -374,7 +374,7 @@ plate_thickness = 0.8
    []
     [combine_with_bottom_plate]
     # type = CombinerGenerator
-    type = StitchedMeshGenerator
+    type = StitchMeshGenerator
     inputs = 'combine_with_top_plate rename_bottom_plate'
     stitch_boundaries_pairs = 'bottom bottom_plate_front'
   []
