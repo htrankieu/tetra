@@ -17,7 +17,7 @@ def read_csv_file(filepath):
     return data
 
 # Case range
-cases = range(0, 17)
+cases = range(0, 21)
 
 # Initialize data containers
 I = []
@@ -26,7 +26,7 @@ disp = []
 
 # Process data for MOOSE
 for item in cases:
-    filename = "results/I" + str(item).zfill(2) + ".csv"
+    filename = "results_aniso/I" + str(item).zfill(2) + ".csv"
     print(f"Reading file: {filename}")
     data = read_csv_file(filename)
     disp.append(data['disp'][-1])  # Displacement
@@ -48,8 +48,8 @@ ax = plt.subplot(1, 1, 1)
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
 plt.xlabel("Current [A]")
 plt.ylabel("Cold side temperature [K]")  # Updated Y-axis label for Kelvin
-plt.plot(I, T_cold, linestyle='-', marker='', color='cornflowerblue', label='MOOSE')
-plt.plot(data_comsol_T["I"], data_comsol_T["T"], linestyle='--', marker='', color='orange', label='COMSOL')
+plt.plot(I, T_cold, linewidth=2, linestyle='-', marker='', color='cornflowerblue', label='MOOSE')
+plt.plot(data_comsol_T["I"], data_comsol_T["T"], linewidth=2, linestyle='--', marker='', color='orange', label='COMSOL')
 ax.legend(frameon=False, prop={'size': 16}, loc='upper right')  # Increased legend font size
 plt.tight_layout()
 plt.savefig('figures/T_cold_K.png')  # Updated filename to reflect Kelvin
@@ -62,9 +62,11 @@ ax = plt.subplot(1, 1, 1)
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
 plt.xlabel("Current [A]")
 plt.ylabel("Displacement [m]")
-plt.plot(I, disp, linestyle='-', marker='', color='cornflowerblue', label='MOOSE')
-plt.plot(data_jaegle_disp["I"], data_jaegle_disp["disp"], linestyle='--', marker='', color='orange', label='COMSOL')
+plt.plot(I, disp, linewidth=2, linestyle='-', marker='', color='cornflowerblue', label='MOOSE')
+plt.plot(data_jaegle_disp["I"], data_jaegle_disp["disp"], linewidth=2, linestyle='--', marker='', color='orange', label='Hailey COMSOL')
 ax.legend(frameon=False, prop={'size': 16}, loc='upper left')  # Increased legend font size
+ax.set_xlim([0.0, 2.0])
+ax.set_ylim([-6e-6, 4e-6])
 plt.tight_layout()
 plt.savefig('figures/disp_font.png')  # Displacement plot filename remains unchanged
 plt.close()

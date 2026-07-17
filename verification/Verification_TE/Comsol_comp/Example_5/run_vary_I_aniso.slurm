@@ -2,7 +2,7 @@
 
 # Submit this script with: sbatch run_vary_I_aniso.slurm
 
-#SBATCH --time=00:30:00
+#SBATCH --time=01:00:00
 #SBATCH --ntasks-per-node=20
 #SBATCH --wckey=ammt
 #SBATCH -J "anisotropic everything"
