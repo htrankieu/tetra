@@ -192,16 +192,9 @@ c14 = 1.325e10
     temperature = T # Incorperate temp
     # use
     # generate_output = 'vonmises_stress stress_xx stress_xy stress_yy'
-    # block = 'interconnect_cold interconnect_hot 5' # Activate for anisotropic thermal expansion for legs
   []
-  # [./all] # anisotropic thermal expansion coefficient for legs
-  #   strain = SMALL
-  #   add_variables = true
-  #   temperature = T
-  #   eigenstrain_names = thermal_eigenstrain 
-  #   block = 'p_leg n_leg' 
-  # [../]
 []
+
 # [Physics/SolidMechanics/QuasiStatic]
 #   [all]
 #     add_variables = true
@@ -331,13 +324,6 @@ c14 = 1.325e10
     eigenstrain_name = eigenstrain
     block = 'p_leg n_leg' 
   []
-  # [./aniso_thermal_eigenstrain]
-  #   type = ComputeEigenstrain
-  #   eigen_base = '21.3e-6 0 0 0 0 0' # '21.3e-6 14.4e-6 14.4e-6 0 0 0'
-  #   eigenstrain_name = eigenstrain # change to eigenstrain
-  #   block = 'p_leg n_leg' 
-  #   temperature = T
-  # [../]
 []
 
 [Postprocessors]

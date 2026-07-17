@@ -17,7 +17,7 @@ def read_csv_file(filepath):
     return data
 
 # Case range
-cases = range(0, 21)
+cases = range(0, 17)
 
 # Initialize data containers
 I = []
@@ -36,6 +36,7 @@ for item in cases:
 # Read COMSOL data
 data_comsol_T = read_csv_file('T_cold_comsol.csv')
 data_comsol_disp = read_csv_file('disp_comsol.csv')
+data_jaegle_disp = read_csv_file('jaegle_ex5_disp.csv')
 
 # Convert COMSOL temperature to Kelvin
 data_comsol_T['T'] = [temp + 273.15 for temp in data_comsol_T['T']]
@@ -62,7 +63,7 @@ ax.get_yaxis().get_major_formatter().set_useOffset(False)
 plt.xlabel("Current [A]")
 plt.ylabel("Displacement [m]")
 plt.plot(I, disp, linestyle='-', marker='', color='cornflowerblue', label='MOOSE')
-plt.plot(data_comsol_disp["I"], data_comsol_disp["disp"], linestyle='--', marker='', color='orange', label='COMSOL')
+plt.plot(data_jaegle_disp["I"], data_jaegle_disp["disp"], linestyle='--', marker='', color='orange', label='COMSOL')
 ax.legend(frameon=False, prop={'size': 16}, loc='upper left')  # Increased legend font size
 plt.tight_layout()
 plt.savefig('figures/disp_font.png')  # Displacement plot filename remains unchanged
