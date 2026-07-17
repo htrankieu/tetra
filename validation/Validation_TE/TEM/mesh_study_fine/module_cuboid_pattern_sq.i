@@ -321,15 +321,14 @@ y_last_row = ${fparse -(ny-1) *(leg_size + 2* leg_spacing)}
 # []
 
 [Outputs]
-  # file_base= 'pattern_sq'
-  # [out]
-  #   type = Exodus
-  #   output_material_properties = true
-  # []
+  [out]
+    type = Exodus
+    output_material_properties = true
+  []
+  csv = true
 
   # perf_graph = true
   # file_base = 'GA_results/test'
   # file_base = optimial_post
-  csv = true
 []
 
