@@ -16,7 +16,7 @@ for i in "${CURRENT[@]}"; do
 #SBATCH --time=00:10:00
 #SBATCH --ntasks-per-node=112
 #SBATCH --nodes=1
-#SBATCH --wckey=neams
+#SBATCH --wckey=ammt
 #SBATCH -J "current_${i}"
 #SBATCH --mail-user=hailey.trankieu@inl.gov
 #SBATCH --mail-type=BEGIN

@@ -1,5 +1,6 @@
 
-I = 1
+I = 0.0 # 1
+assigned_temperature = 500
 leg_size = 1.7
 leg_height = 1.4
 elem_leg = 17
@@ -42,7 +43,7 @@ parallel_type=DISTRIBUTED
 []
 [Variables]
   [T]
-    initial_condition = 300 #in K
+    initial_condition = ${fparse assigned_temperature} #in K
   []
   [elec]
     block =  'n_leg 102 202 p_leg 104 204 interconnect_cold 101 103 201 203 interconnect_hot'
@@ -86,7 +87,7 @@ parallel_type=DISTRIBUTED
     variable = T
     boundary = 'top_plate_front'
     # T_infinity = ${fparse 181.53+273.15}
-    T_infinity = 500
+    T_infinity = ${fparse assigned_temperature}
     htc = 5e4 # ${fparse 1/(25*20e-6)}
   []
   [cold_temp]
