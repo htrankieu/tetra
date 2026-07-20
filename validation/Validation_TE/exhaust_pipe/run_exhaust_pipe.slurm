@@ -11,4 +11,4 @@
 
 module load use.moose moose-dev-openmpi/2026.06.16
 cd /projects/USU/Thermoelectric-Hailey/tetra-test/tetra/validation/Validation_TE/exhaust_pipe
-mpiexec -n 560 moose-dev-exec ../../../tetra/tetra-opt -i Pipe_only.i -w
+mpiexec -n 560 moose-dev-exec ../../../tetra-opt -i Pipe_only.i -w

@@ -155,7 +155,7 @@ x_start = ${fparse pipe_thickness + 0.5 * pipe_inner}
     max_failures = 100
     max_procs_per_app = 2
     no_restore = true
-    keep_solution_during_restore = true
+    keep_solution_during_restore = false
   []
   [TE]
     type = FullSolveMultiApp
@@ -163,7 +163,7 @@ x_start = ${fparse pipe_thickness + 0.5 * pipe_inner}
     positions_file = TE_positions.txt
     output_in_position = true
     no_restore = true
-    keep_solution_during_restore = true
+    keep_solution_during_restore = false
     # min_procs_per_app=110
 
   []
@@ -176,6 +176,7 @@ x_start = ${fparse pipe_thickness + 0.5 * pipe_inner}
     source_user_object = T_wall_uo
     variable = T_wall
     search_value_conflicts = false
+    error_on_miss = false
   []
   [T_fluid]
     type = MultiAppGeneralFieldNearestLocationTransfer
@@ -197,6 +198,7 @@ x_start = ${fparse pipe_thickness + 0.5 * pipe_inner}
     source_variable = T_solid
     variable = T_fluid
     search_value_conflicts = false
+    error_on_miss = false
   []
   [T_TE_wall]
     type = MultiAppGeneralFieldShapeEvaluationTransfer

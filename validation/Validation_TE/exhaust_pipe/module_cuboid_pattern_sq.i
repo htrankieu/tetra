@@ -178,14 +178,14 @@ y_last_row = ${fparse -(ny-1) *(leg_size + 2* leg_spacing)}
   []
   [nleg_thermal]
     type = ADHeatConductionMaterial
-    temp = T
+    temperature = T
     thermal_conductivity_temperature_function = Bi2Te3_k_func
     specific_heat_temperature_function = 2
     block = 'n_leg 102 202'
   []
   [pleg_thermal]
     type = ADHeatConductionMaterial
-    temp = T
+    temperature = T
     thermal_conductivity_temperature_function = Bi2Te3_k_func
     specific_heat_temperature_function = 2
     block = 'p_leg 204 104'
@@ -214,7 +214,7 @@ y_last_row = ${fparse -(ny-1) *(leg_size + 2* leg_spacing)}
   [interconnect_th]
     # Copper
     type = ADHeatConductionMaterial
-    temp = T
+    temperature = T
     thermal_conductivity = 398 # W/mK
     specific_heat = 0.385 # J/kgK
     block =  'interconnect_cold 101 103 201 203 interconnect_hot'
@@ -238,7 +238,7 @@ y_last_row = ${fparse -(ny-1) *(leg_size + 2* leg_spacing)}
   []
   [plates_thermal]
     type = ADHeatConductionMaterial
-    temp = T
+    temperature = T
     thermal_conductivity = 22
     specific_heat = 10
     block = '500 600'
