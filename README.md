@@ -7,5 +7,5 @@ This MOOSE-based application is used to solve the coupled current continuity and
 
 ### Navigating the repository
 
-**Folder**          **Contents**
-verification          Verification cases for Jaegle
+**Folder** &emsp;&emsp;&emsp; **Contents** <br>
+verification &emsp;&emsp;&emsp; Verification cases for Jaegle
