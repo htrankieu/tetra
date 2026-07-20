@@ -35,9 +35,9 @@ plt.xlabel("Temperature Difference [T]", fontsize=16)
 
 
 
-plt.plot(temp_diff, voltage, marker='', color='green', linewidth=3, label='TETRA')
-plt.plot(sim_BiTe['T'], sim_BiTe['V'], label='Chen sim', color='orange', linewidth=3)
-plt.plot(expr_BiTe['T'], expr_BiTe['V'], marker='s', markersize=10, linestyle="", label='Chen expr', color='cornflowerblue')
+plt.plot(temp_diff, voltage, marker='', color='green', linewidth=3, label='MOOSE')
+plt.plot(sim_BiTe['T'], sim_BiTe['V'], label='Simulation - Chen et al.', color='orange', linewidth=3)
+plt.plot(expr_BiTe['T'], expr_BiTe['V'], marker='s', markersize=10, linestyle="", label='Experiment', color='cornflowerblue')
 
 ax.legend(frameon=False, prop={'size':16})
 plt.tight_layout()
