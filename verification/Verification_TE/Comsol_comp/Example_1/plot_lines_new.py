@@ -58,7 +58,7 @@ for case in cases:
 
 ax.legend(leg_items, frameon=False, prop={'size': 14}, loc='lower left')
 ax.set_xlim([0, 0.006]) # Added by Tran-Kieu 6/25/2026
-ax.set_ylim([210, 290])
+ax.set_ylim([200, 290])
 plt.tight_layout()
 plt.savefig('figures/T_x_K.png')  # Updated filename to include "_K"
 plt.close()

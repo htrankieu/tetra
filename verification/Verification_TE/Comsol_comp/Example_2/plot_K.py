@@ -18,7 +18,7 @@ def read_csv_file(filepath):
 
 # Read data from CSV files
 data = read_csv_file('pleg_cuboid_tr_csv.csv')
-data_comsol_T = read_csv_file('T_tr_comsol.csv')
+data_comsol_T = read_csv_file('ex2.csv')
 
 # Convert temperatures from Celsius to Kelvin
 data['T_cold'] = [temp for temp in data['T_cold']]  # MOOSE temperature in Kelvin
@@ -34,7 +34,7 @@ plt.ylabel("Cold side temperature [K]")  # Updated Y-axis label for Kelvin
 
 # Plot data
 plt.plot(data['time'], data['T_cold'], linestyle='-', marker='', color='cornflowerblue')  # MOOSE data
-plt.plot(data_comsol_T["time"], data_comsol_T["T"], linestyle='', marker='o', color='cornflowerblue')  # COMSOL data
+plt.plot(data_comsol_T["time"], data_comsol_T["T"], linestyle='', marker='o', color='orange')  # COMSOL data
 
 # Add legend
 ax.legend(['MOOSE', "COMSOL"], frameon=False, prop={'size': 16}, loc='lower right')
