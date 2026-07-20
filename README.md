@@ -7,5 +7,6 @@ This MOOSE-based application is used to solve the coupled current continuity and
 
 ### Navigating the repository
 
-**Folder** &emsp;&emsp;&emsp; **Contents** <br>
+**Folder** &emsp;&emsp;&emsp;&emsp; **Contents** <br>
+validation &emsp;&emsp;&emsp; Validation cases for mesh refinement study, Chen, and exhaust pipe MultiApps
 verification &emsp;&emsp;&emsp; Verification cases for Jaegle
