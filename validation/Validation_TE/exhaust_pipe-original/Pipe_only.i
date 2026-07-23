@@ -156,7 +156,7 @@ x_start = ${fparse pipe_thickness + 0.5 * pipe_inner}
     max_procs_per_app = 2
     no_restore = true
     keep_solution_during_restore = true
-    update_old_solution_when_keeping_solution_during_restore = false
+    update_old_solution_when_keeping_solution_during_restore = true
   []
   [TE]
     type = FullSolveMultiApp

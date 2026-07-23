@@ -124,7 +124,6 @@ plate_thickness = 0.8
     inputs = 'mirror realign'
     # avoid_merging_boundaries = true
     stitch_boundaries_pairs = 'connect_left_front connect_right_back'
-    subdomain_remapping = false
   []
 
   [rotate]
@@ -238,7 +237,6 @@ plate_thickness = 0.8
     type = StitchMeshGenerator
     inputs = 'generate_side_connect generate_side_connect_2'
     stitch_boundaries_pairs = 'mod_side_connect mod_side_connect_side'
-    subdomain_remapping = false
   []
   [generate_side_connect_3]
     type =  ParsedGenerateSideset
@@ -309,7 +307,6 @@ plate_thickness = 0.8
     type = StitchMeshGenerator
     inputs = 'generate_side_connect_3 generate_side_connect_22'
     stitch_boundaries_pairs = 'mod_side_connect mod_side_connect_side_2'
-    subdomain_remapping = false
   []
 
   [substrat_top]
@@ -340,7 +337,6 @@ plate_thickness = 0.8
     type = StitchMeshGenerator
     inputs = 'combine_with_side_2 rename_top_plate'
     stitch_boundaries_pairs = 'top top_plate_back'
-    subdomain_remapping = false
   []
   [substrat_bottom]
     type = GeneratedMeshGenerator
@@ -370,7 +366,6 @@ plate_thickness = 0.8
     type = StitchMeshGenerator
     inputs = 'combine_with_top_plate rename_bottom_plate'
     stitch_boundaries_pairs = 'bottom bottom_plate_front'
-    subdomain_remapping = false
   []
 
   [EntireMesh]
@@ -387,3 +382,4 @@ plate_thickness = 0.8
   []
   show_info = true
 []
+
